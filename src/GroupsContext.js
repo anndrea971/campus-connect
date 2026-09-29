@@ -1,4 +1,7 @@
 // GroupsContext.js - holds the list of study groups and shares it with every screen.
+// This file creates a React Context that holds our 
+// list of study groups and provides helper functions
+// like addGroup, toggleJoin, and deleteGroup
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { loadGroups, saveGroups } from './storage';
 
@@ -10,6 +13,8 @@ export function GroupsProvider({ children }) {
   const [loaded, setLoaded] = useState(false);
 
   // Load saved data once when the app starts
+  // Notice the useEffect hooks here: the first one loads saved groups
+  // from local storage when the app boots up
   useEffect(() => {
     loadGroups().then((saved) => {
       setGroups(saved);
@@ -18,6 +23,8 @@ export function GroupsProvider({ children }) {
   }, []);
 
   // Save whenever the list changes (but only after the first load finished)
+  // and the second one automatically triggers a save 
+  // whenever the groups array changes.   
   useEffect(() => {
     if (loaded) saveGroups(groups);
   }, [groups, loaded]);
@@ -46,6 +53,8 @@ export function GroupsProvider({ children }) {
 }
 
 // Small helper hook so screens can read the shared data
+// I also exported a small custom hook called useGroups()
+// so any screen can easily pull or modify the shared state with a single line of code
 export function useGroups() {
   return useContext(GroupsContext);
 }
