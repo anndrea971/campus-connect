@@ -1,4 +1,9 @@
 // App.js - entry point. Sets up the data provider and the screen navigation.
+// *** Let's start at the entry point of the application, App.js.  
+// *** Here, you can see I'm wrapping the entire component tree 
+// *** inside a custom GroupsProvider to share data globally.
+// *** Right below that, I use React Navigation (@react-navigation/native-stack) 
+// *** to set up a native stack navigator (Stack.Navigator). 
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -8,6 +13,9 @@ import CreateGroupScreen from './src/screens/CreateGroupScreen';
 import GroupDetailsScreen from './src/screens/GroupDetailsScreen';
 
 const Stack = createNativeStackNavigator();
+
+  
+// ***This defines three main screens: the Home screen, the CreateGroup screen.
 
 // Root component: wraps all screens in the shared groups state
 export default function App() {

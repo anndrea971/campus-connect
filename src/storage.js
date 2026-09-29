@@ -1,5 +1,7 @@
 // storage.js - saves and loads study groups on the phone using AsyncStorage,
 // so data is still there after the app closes or the phone restarts.
+// ***"To ensure student data isn't lost when closing the app, 
+// ***I implemented local persistence using AsyncStorage in storage.js.
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const KEY = 'campusconnect_groups';
