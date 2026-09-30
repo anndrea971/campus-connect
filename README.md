@@ -8,16 +8,16 @@ How to use it: open the app, tap a group to see its details and join it, or tap 
 
 My purpose was to learn the React Native workflow (components, navigation, state management, persistence) and practice writing clean, commented code.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/npc8atZBzIg)
 
 # Development Environment
 
 - Visual Studio Code
-- Expo (Expo Go on a phone or an Android emulator)
-- Git and GitHub
+- Expo
+- GitHub
 
 Language and libraries:
-- JavaScript (React Native, React hooks and Context)
+- JavaScript
 - `@react-navigation/native` and `@react-navigation/native-stack` for screens
 - `@react-native-async-storage/async-storage` for local persistence
 
